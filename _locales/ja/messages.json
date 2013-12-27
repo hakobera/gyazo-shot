@@ -1,6 +1,10 @@
 {
-  "description": {
+  "extension_description": {
     "message": "ブラウザのスクリーンショットを、Gyazoサーバに送信する拡張機能です。"
+  },
+
+  "browser_action_title": {
+    "message": "キャプチャをGyazoで共有"
   }
 }
 

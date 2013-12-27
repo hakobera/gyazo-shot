@@ -1,5 +1,9 @@
 {
-  "description": {
+  "extension_description": {
     "message": "The extension for take browser screen shot and set it to Gyazo server."
+  },
+
+  "browser_action_title": {
+    "message": "Share capture on Gyazo"
   }
 }
