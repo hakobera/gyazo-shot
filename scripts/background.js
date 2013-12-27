@@ -29,6 +29,14 @@ var bg = null;
     return new Blob([uInt8Array], { type: mimeType });
   }
 
+  function copyToClipboard(str) {
+    document.oncopy = function(event) {
+      event.clipboardData.setData('text/plain', str);
+      event.preventDefault();
+    };
+    document.execCommand("Copy", false, null);
+  }
+
   function send(url, gyazoId, blob) {
     var xhr = new XMLHttpRequest(),
         data = new FormData();
@@ -41,6 +49,7 @@ var bg = null;
       var body = this.response;
       if (this.status == 200) {
         console.log(body);
+        copyToClipboard(body);
         window.open(body);
       } else {
         alert('Error ' + body);
