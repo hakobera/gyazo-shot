@@ -5,5 +5,17 @@
 
   "browser_action_title": {
     "message": "Share capture on Gyazo"
+  },
+
+  "server_url_label": {
+    "message": "Gyazo Server URL"
+  },
+
+  "user_id_label": {
+    "message": "Gyazo User ID"
+  },
+
+  "save_button_label": {
+    "message": "Save"
   }
 }

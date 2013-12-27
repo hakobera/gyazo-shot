@@ -22,7 +22,7 @@
 
   "background": {
     "page": "background.html",
-    "persistent": true
+    "persistent": false
   },
 
   "options_page": "options.html",

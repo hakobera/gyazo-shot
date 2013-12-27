@@ -37,14 +37,18 @@ var bg = null;
     data.append("imagedata", blob);
 
     xhr.open('POST', url);
-    xhr.onload = function() {
+    xhr.onload = function () {
+      var body = this.response;
       if (this.status == 200) {
-        var url = this.response;
-        console.log(url);
-        window.open(url);
+        console.log(body);
+        window.open(body);
       } else {
-        alert('error');
+        alert('Error ' + body);
       }
+    };
+
+    xhr.onerror = function (e) {
+      alert("Error Status" + e.target.status);
     };
 
     xhr.send(data);
@@ -61,13 +65,13 @@ var bg = null;
       var opts = { format: 'png', quality: 75 };
       chrome.tabs.captureVisibleTab(null, opts, function (dataUrl) {
         var blob = convertDataURIToBlob(dataUrl, 'image/png');
-        send(self.getServerUrl() + '/upload.cgi', self.getUserId(), blob);
+        send(self.getServerUrl(), self.getUserId(), blob);
       });
     });
   };
 
   Background.prototype.getServerUrl = function () {
-    return _getConfig('serverUrl', 'http://gyazo.com');
+    return _getConfig('serverUrl', 'http://gyazo.com/upload.cgi');
   };
 
   Background.prototype.setServerUrl = function (value) {

@@ -3,10 +3,51 @@
   <head>
     <title>Gyazo Shot</title>
     <script src="./scripts/options.js"></script>
+    <style>
+    h1 img {
+      vertical-align: middle;
+    }
+
+    form {
+
+    }
+
+    form > div {
+      margin: 1em .5em;
+    }
+
+    form > div label {
+      display: inline-block;
+      width: 140px;
+    }
+
+    form > div input {
+      padding: .5em;
+      font-size: 90%;
+    }
+
+    form > div button {
+      width: 100px;
+      padding: .25em;
+      font-size: 90%;
+    }
+    </style>
   </head>
   <body>
-    <div>
-      options
-    </div>
+    <h1><img src="./icons/icon_48.png"/> Gyazo Shot</h1>
+    <form id="optionsForm">
+      <div>
+        <label id="server_url_label"></label>
+        <input id="serverUrl" type="text" size="60"/>
+      </div>
+      <div>
+        <label id="user_id_label"></label>
+        <input id="userId" type="text" size="60"/>
+      </div>
+      <div>
+        <label></label>
+        <button type="submit" id="save_button_label"></button>
+      </div>
+    </form>
   </body>
 </html>

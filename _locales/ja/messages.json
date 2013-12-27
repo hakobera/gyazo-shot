@@ -5,6 +5,18 @@
 
   "browser_action_title": {
     "message": "キャプチャをGyazoで共有"
+  },
+
+  "server_url_label": {
+    "message": "GyazoサーバURL"
+  },
+
+  "user_id_label": {
+    "message": "GyazoユーザID"
+  },
+
+  "save_button_label": {
+    "message": "保存"
   }
 }
 
