@@ -37,14 +37,14 @@ var bg = null;
     document.execCommand("Copy", false, null);
   }
 
-  function send(url, gyazoId, blob) {
+  function send(url, gyazoId, blob, basicId, basicPw) {
     var xhr = new XMLHttpRequest(),
         data = new FormData();
 
     data.append("id", gyazoId);
     data.append("imagedata", blob);
 
-    xhr.open('POST', url);
+    xhr.open('POST', url, true, basicId, basicPw);
     xhr.onload = function () {
       var body = this.response;
       if (this.status == 200) {
@@ -74,7 +74,7 @@ var bg = null;
       var opts = { format: 'png', quality: 75 };
       chrome.tabs.captureVisibleTab(null, opts, function (dataUrl) {
         var blob = convertDataURIToBlob(dataUrl, 'image/png');
-        send(self.getServerUrl(), self.getUserId(), blob);
+        send(self.getServerUrl(), self.getUserId(), blob, self.getBasicId(), self.getBasicPw());
       });
     });
   };
@@ -93,6 +93,22 @@ var bg = null;
 
   Background.prototype.setUserId = function (value) {
     return _setConfig('userId', value);
+  };
+
+  Background.prototype.getBasicId = function () {
+    return _getConfig('basicId', '');
+  };
+
+  Background.prototype.setBasicId = function (value) {
+    return _setConfig('basicId', value);
+  };
+
+  Background.prototype.getBasicPw = function () {
+    return _getConfig('basicPw', '');
+  };
+
+  Background.prototype.setBasicPw = function (value) {
+    return _setConfig('basicPw', value);
   };
 
   bg = new Background();

@@ -15,6 +15,14 @@
     "message": "GyazoユーザID"
   },
 
+  "basic_id_label": {
+    "message": "BASIC認証 ユーザID"
+  },
+
+  "basic_pass_label": {
+    "message": "BASIC認証 パスワード"
+  },
+
   "save_button_label": {
     "message": "保存"
   }
