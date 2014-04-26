@@ -15,6 +15,14 @@
     "message": "Gyazo User ID"
   },
 
+  "basic_id_label": {
+    "message": "BASICAuth User ID"
+  },
+
+  "basic_pass_label": {
+    "message": "BASICAuth Password"
+  },
+
   "save_button_label": {
     "message": "Save"
   }

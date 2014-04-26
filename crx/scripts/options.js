@@ -14,6 +14,8 @@
       chrome.runtime.getBackgroundPage(function (page) {
         page.bg.setServerUrl(trim($('serverUrl').value));
         page.bg.setUserId(trim($('userId').value));
+        page.bg.setBasicId(trim($('basicId').value));
+        page.bg.setBasicPw(trim($('basicPw').value));
       });
       return false;
     };
@@ -28,7 +30,9 @@
     [
       'server_url_label',
       'user_id_label',
-      'save_button_label'
+      'save_button_label',
+      'basic_id_label',
+      'basic_pass_label'
     ]
     .forEach(function (label) {
       setLabel(label);
@@ -44,6 +48,8 @@
     chrome.runtime.getBackgroundPage(function (page) {
       loadValue('serverUrl', page.bg.getServerUrl());
       loadValue('userId', page.bg.getUserId());
+      loadValue('basicId', page.bg.getBasicId());
+      loadValue('basicPw', page.bg.getBasicPw());
     });
   }
 
